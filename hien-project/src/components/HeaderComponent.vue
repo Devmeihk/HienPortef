@@ -1,14 +1,14 @@
 <template>
   <header class="header-component">
     <div class="logo">
-      Hien.
+      <router-link to="/">HN</router-link>
     </div>
     <nav class="navigation">
       <ul>
-        <li><a href="#about">About me</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#cv">CV</a></li>
-        <li><b-button href="#contact">Contact</b-button></li>
+        <li><router-link to="/about">About</router-link></li>
+        <li><router-link to="/projects">Projects</router-link></li>
+        <li><router-link to="/cv">CV</router-link></li>
+        <li class="contact"><router-link to="/contact">Contact</router-link></li>
       </ul>
     </nav>
   </header>
@@ -38,15 +38,21 @@ export default {
   color: #333;
 }
 
-.logo {
+.logo a {
   font-size: 1.5rem;
+  color: #333;
+  text-decoration: none;
 }
 
 .navigation ul {
   list-style: none;
   display: flex;
   gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
 }
+
 
 .navigation a {
   color: #333;
@@ -58,13 +64,17 @@ export default {
   text-decoration: underline;
 }
 
-.navigation b-button {
+.navigation button:hover {
+  text-decoration: underline;
+  text-decoration-color: #fff;
+}
+
+.contact {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
-  color: #fff;
-  background-color: #000;
-  border: none;
-  border-radius: 5px;
+  background-color: #fff;
+  border: solid 2px black;
+  border-radius: 60px;
   cursor: pointer;
 }
 </style>

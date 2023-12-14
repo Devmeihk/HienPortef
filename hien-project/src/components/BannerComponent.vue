@@ -1,66 +1,75 @@
 <template>
-  <section class="banner">
+  <div class="banner-container">
     <div class="banner-content">
-      <h1>Welcome to My Portfolio</h1>
-      <p>I'm a passionate developer with a knack for building web applications.</p>
-      <button @click="scrollToWork">View My Work</button>
+      <div class="left-column">
+        <!-- Content for the left column goes here -->
+        <h1>Welcome to My Portfolio</h1>
+        <p>This is where I showcase my work and projects.</p>
+        <button>Learn More</button>
+      </div>
+      <div class="right-column">
+        <!-- Content for the right column goes here -->
+        <!-- Assuming you might want to put an image or animation here -->
+        <img src="../assets/green-plants.jpg" alt="Banner Image" />
+      </div>
     </div>
-    <div>
-      <h1>HEI TEST</h1>
-    </div>
-  </section>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'BannerComponent',
-  methods: {
-    scrollToWork() {
-      // If you're using Vue Router with history mode, you might use this.$router.push({ name: 'work' })
-      // For simple anchor-based scrolling, the following line would suffice:
-      document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-}
+  // You can add your script here if needed
+};
 </script>
 
 <style scoped>
-.banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 75vh; /* Adjust the height of the banner as needed */
-  background-image: url('../assets/green-plants.jpg'); /* Replace with your image path */
-  background-size: cover;
-  background-position: center;
-  color: #fff;
+.banner-container {
+  display: flex; /* This enables flexbox */
+  align-items: center; /* Align items vertically */
+  justify-content: center; /* Center the content horizontally */
+  min-height: 400px; /* Or whatever height you want for your banner */
+  background-color: #ffcb50; /* Just an example background color */
 }
 
 .banner-content {
+  display: flex;
+  width: 100%; /* This ensures the banner content stretches to the container width */
+  max-width: 1200px; /* Maximum width of the content, you can adjust this */
+  margin: 0 auto; /* This centers the banner content horizontally */
+}
+
+.left-column, .right-column {
+  flex: 1; /* This makes both columns equal width */
+  padding: 20px; /* Add some spacing around the content */
+}
+
+.left-column {
+  /* Styles specific to the left column */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
-
-.banner h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.banner p {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-}
-
-.banner button {
+.left-column button{
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
-  color: #fff;
-  background-color: #000;
+  color: #000;
+  background-color: #fff;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+}
+.right-column {
+  /* Styles specific to the right column */
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
 }
 
-.banner button:hover {
-  background-color: #444;
+.right-column img {
+  max-width: 100%; /* Make sure the image is responsive and doesn't overflow */
+  height: auto; /* Maintain the aspect ratio */
 }
 </style>

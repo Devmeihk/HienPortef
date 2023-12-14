@@ -1,21 +1,28 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-  <HomePage msg="Hei Hien"/>
+  <LayoutComponent />
 </template>
 
 <script>
-import HomePage from './components/HomePage.vue'
+
+import LayoutComponent from './components/LayoutComponent.vue'
 
 export default {
   name: 'App',
   components: {
-    HomePage
+    LayoutComponent
   }
 }
 </script>
 
 <style>
-#app {
-
+html, body {
+  font-family: 'Montserrat', sans-serif;
 }
+
+#app {
+  font-family: 'Montserrat', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 </style>
